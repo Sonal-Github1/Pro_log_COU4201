@@ -57,7 +57,7 @@ answer(Question, Answer) :-
     % Add more rules for other questions.
     !. %Cut, to stop after first match
 
-answer(Question, "I don't have information about that. Please ask another question."). % Default answer.
+answer(_, "I don't have information about that. Please ask another question."). % Default answer.
 
 % Preprocessing (Basic - lowercasing)
 
@@ -74,8 +74,7 @@ chatbot :-
     answer(Question, Answer),
     write('Chatbot: '),
     writeln(Answer),
-    (RawQuestion = "exit" -> ! ; fail). % exit condition
-write('Hello!'),nl,write('Ask me anything about Artificial Intellegent').
+    (RawQuestion = "exit" -> ! ; fail).
 
 % Example Queries:
 % ?- chatbot.
