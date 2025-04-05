@@ -24,7 +24,7 @@ grandmother(X, Y) :- female(X), grandparent(X, Y).
 
 % OUTPUT
 % Basic queries to ask
-?- male(paul).
+/*- male(paul).
 true.
 
 ?- female(john).
@@ -42,4 +42,4 @@ true.
 
 ?- sibling(X, anna).
 X = paul ;
-false.
+false.*/
