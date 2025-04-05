@@ -20,3 +20,26 @@ sibling(X, Y) :- parent(Z, X), parent(Z, Y), X \= Y.
 grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
 grandfather(X, Y) :- male(X), grandparent(X, Y).
 grandmother(X, Y) :- female(X), grandparent(X, Y).
+
+
+% OUTPUT
+% Basic queries to ask
+?- male(paul).
+true.
+
+?- female(john).
+false.
+?- parent(john, paul).
+true.
+
+?- parent(X, anna).
+X = john ;
+X = susan.
+
+
+?- sibling(paul, anna).
+true.
+
+?- sibling(X, anna).
+X = paul ;
+false.
